@@ -38,14 +38,29 @@
         .section-title { font-family: var(--font-display); font-size: 3.5rem; margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; }
         .section-title::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(90deg, rgba(200, 170, 110, 0.4), transparent); }
 
-        .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-        .staff-card { background: rgba(15, 20, 30, 0.5); border: 1px solid rgba(200, 170, 110, 0.12); border-radius: 10px; padding: 1.5rem; transition: all 0.4s ease; backdrop-filter: blur(10px); }
-        .staff-card:hover { transform: translateY(-8px); border-color: var(--hex-gold); box-shadow: 0 10px 25px rgba(200, 170, 110, 0.15); }
+        /* Grid interactivo para las tarjetas del Staff */
+        .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        
+        .staff-card { 
+            background: rgba(15, 20, 30, 0.5); 
+            border: 1px solid rgba(200, 170, 110, 0.12); 
+            border-radius: 10px; 
+            padding: 1.5rem; 
+            transition: all 0.4s ease; 
+            backdrop-filter: blur(10px); 
+        }
+        
+        .staff-card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--hex-gold); 
+            box-shadow: 0 10px 25px rgba(200, 170, 110, 0.15); 
+        }
 
-        .staff-role { font-size: 0.7rem; color: var(--hex-gold); font-weight: 800; text-transform: uppercase; margin-bottom: 0.2rem; display: block; }
-        .staff-alias { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 1rem; color: #fff; }
+        .staff-role { font-size: 0.75rem; color: var(--hex-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.3rem; display: block; }
+        .staff-alias { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem; color: #fff; letter-spacing: -0.5px; }
+        
         .player-socials a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: color 0.3s; }
-        .player-socials a:hover { color: var(--hex-gold); }
+        .player-socials a:hover { color: var(--hex-cyan); }
     </style>
 </head>
 <body>
@@ -60,26 +75,93 @@
             <li><a href="jugadores.html">Jugadores</a></li>
             <li><a href="staff.html" class="active">Staff</a></li>
         </ul>
-        <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem; text-decoration:none; color:#000; background:linear-gradient(135deg, #fff, var(--hex-gold));">DISCORD</a>
+        <a href="#discord" style="padding: 0.6rem 1.4rem; font-size: 0.8rem; text-decoration:none; color:#000; background:linear-gradient(135deg, #fff, var(--hex-gold)); font-weight: 800; clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);">DISCORD</a>
     </nav>
 
     <section class="container">
         <h2 class="section-title">Staff</h2>
         <div class="staff-grid">
+            
             <div class="staff-card">
-                <span class="staff-role">CEO / Founder</span>
-                <h3 class="staff-alias">BLANK</h3>
+                <span class="staff-role">Co-CEO & Sports Psychologist</span>
+                <h3 class="staff-alias">Crystalena</h3>
                 <div class="player-socials">
                     <a href="https://x.com" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
+
             <div class="staff-card">
-                <span class="staff-role">Head Coach</span>
-                <h3 class="staff-alias">KAIZEN</h3>
+                <span class="staff-role">CEO</span>
+                <h3 class="staff-alias">Lapras</h3>
                 <div class="player-socials">
                     <a href="https://x.com" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Content Creator</span>
+                <h3 class="staff-alias">Aleidiomas</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Analyst</span>
+                <h3 class="staff-alias">Crisco</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Content Creator</span>
+                <h3 class="staff-alias">Maiilux</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Content Creator</span>
+                <h3 class="staff-alias">Morti</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Coach</span>
+                <h3 class="staff-alias">Seb</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Content Creator</span>
+                <h3 class="staff-alias">Wizardiny</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Content Creator</span>
+                <h3 class="staff-alias">Nyra</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="staff-card">
+                <span class="staff-role">Graphic Designer</span>
+                <h3 class="staff-alias">Aideeko</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
         </div>
     </section>
 </body>
