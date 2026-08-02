@@ -88,19 +88,7 @@
         .nav-links a:hover, .nav-links a.active { color: var(--nova-pink); }
 
         /* --- Hero Section --- */
-        .hero { 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            padding: 0 10%; 
-            gap: 2rem;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-        }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 10%; }
         
         .hero-tag { 
             font-size: 0.9rem; 
@@ -109,7 +97,6 @@
             color: var(--nova-yellow); 
             margin-bottom: 1rem; 
             font-weight: 600; 
-            display: block;
         }
 
         /* Gradiente en el título desde Blanco -> Rosa -> Amarillo */
@@ -133,31 +120,6 @@
             line-height: 1.6;
         }
 
-        /* --- Contenedor e Imagen PNG de la derecha --- */
-        .hero-media {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-png {
-    max-width: 420px;
-    width: 100%;
-    height: auto;
-    /* Invierte el color negro a blanco y le añade el resplandor neón */
-    filter: invert(1) drop-shadow(0 0 25px rgba(255, 97, 216, 0.6)) drop-shadow(0 0 50px rgba(255, 200, 87, 0.3));
-    animation: float 6s ease-in-out infinite;
-}
-        }
-
-        /* Animación de flotado flotante suave */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
-        }
-
         /* Botón estilo Nova Rosa/Amarillo */
         .btn-nova { 
             font-weight: 800; 
@@ -178,12 +140,9 @@
             box-shadow: 0 0 30px rgba(255, 97, 216, 0.5);
         }
 
-        @media (max-width: 992px) {
-            .hero { flex-direction: column; justify-content: center; padding-top: 8rem; text-align: center; }
-            .hero-content { max-width: 100%; margin-bottom: 3rem; }
-            .hero p { margin-left: auto; margin-right: auto; }
-            .hero h1 { font-size: 5rem; }
-            .hero-png { max-width: 320px; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+            .hero { padding: 0 6%; }
             .nav-links { display: none; }
         }
     </style>
@@ -205,19 +164,12 @@
         <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">DISCORD</a>
     </nav>
 
-    <!-- Hero Section con la imagen PNG -->
+    <!-- Hero Section con la nueva paleta -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">Teamfight Tactics Roster</span>
-            <h1>STR NOVA</h1>
-            <p>Maestros de la convergencia. Dominamos las composiciones de alto nivel, adaptándonos a cada aumentador y rotación de Set.</p>
-            <a href="jugadores.html" class="btn-nova">VER JUGADORES</a>
-        </div>
-
-        <div class="hero-media">
-            <!-- Cambia "estrella.png" por el nombre exacto de tu archivo PNG transparente -->
-            <img src="logo.png" alt="STR Nova Emblem" class="hero-png">
-        </div>
+        <span class="hero-tag">Teamfight Tactics Roster</span>
+        <h1>STR NOVA</h1>
+        <p>Maestros de la convergencia. Dominamos las composiciones de alto nivel, adaptándonos a cada aumentador y rotación de Set.</p>
+        <a href="jugadores.html" class="btn-nova">VER JUGADORES</a>
     </section>
 
 </body>
