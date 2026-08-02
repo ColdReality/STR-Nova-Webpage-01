@@ -143,12 +143,13 @@
         }
 
         .hero-png {
-            max-width: 480px;
-            width: 100%;
-            height: auto;
-            /* Filtro de sombra neón para darle brillo al PNG sin fondo */
-            filter: drop-shadow(0 0 25px rgba(255, 97, 216, 0.4)) drop-shadow(0 0 50px rgba(255, 200, 87, 0.2));
-            animation: float 6s ease-in-out infinite;
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    /* Invierte el color negro a blanco y le añade el resplandor neón */
+    filter: invert(1) drop-shadow(0 0 25px rgba(255, 97, 216, 0.6)) drop-shadow(0 0 50px rgba(255, 200, 87, 0.3));
+    animation: float 6s ease-in-out infinite;
+}
         }
 
         /* Animación de flotado flotante suave */
@@ -215,7 +216,7 @@
 
         <div class="hero-media">
             <!-- Cambia "estrella.png" por el nombre exacto de tu archivo PNG transparente -->
-            <img src="estrella.png" alt="STR Nova Emblem" class="hero-png">
+            <img src="logo.png" alt="STR Nova Emblem" class="hero-png">
         </div>
     </section>
 
