@@ -7,42 +7,149 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-black: #050608;
+            --bg-black: #0a050e; /* Fondo morado/negro profundo */
             --text-main: #ffffff;
-            --text-muted: #8e9bb0;
-            --hex-cyan: #00f0ff;
-            --hex-gold: #c8aa6e;
+            --text-muted: #c3b0ce;
+            
+            /* Paleta extraída de la imagen */
+            --nova-pink: #ff61d8;       /* Rosa neón / Magenta principal */
+            --nova-pink-glow: #e23bb4;  /* Rosa intenso para resplandores */
+            --nova-yellow: #ffc857;     /* Amarillo / Dorado cálido */
+            --nova-purple: #9d4edd;     /* Púrpura de transición */
+            
             --font-display: 'Playfair Display', serif;
             --font-body: 'Work Sans', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-black); color: var(--text-main); font-family: var(--font-body); }
+        body { 
+            background-color: var(--bg-black); 
+            color: var(--text-main); 
+            font-family: var(--font-body); 
+            overflow-x: hidden;
+            position: relative;
+        }
 
+        /* Ambientación de fondo con los orbes de luz rosa y amarillo */
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            width: 75vmax;
+            height: 75vmax;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.35;
+        }
+
+        body::before {
+            top: -20%;
+            left: -15%;
+            background: radial-gradient(circle, var(--nova-pink) 0%, var(--nova-purple) 60%, transparent 80%);
+        }
+
+        body::after {
+            bottom: -20%;
+            right: -10%;
+            background: radial-gradient(circle, var(--nova-yellow) 0%, var(--nova-pink-glow) 50%, transparent 80%);
+        }
+
+        /* --- Barra de Navegación --- */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 6%; background: rgba(5, 6, 8, 0.85); backdrop-filter: blur(12px);
+            padding: 1.5rem 6%; background: rgba(10, 5, 14, 0.85); backdrop-filter: blur(12px);
             position: fixed; width: 100%; top: 0; z-index: 100;
-            border-bottom: 1px solid rgba(200, 170, 110, 0.15);
+            border-bottom: 1px solid rgba(255, 97, 216, 0.2);
         }
 
         .brand { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 12px; }
-        .brand-logo { height: 38px; width: auto; filter: invert(1) brightness(1.2); }
-        .brand .sub-tag { font-family: var(--font-body); font-size: 0.75rem; color: var(--hex-gold); border: 1px solid rgba(200, 170, 110, 0.3); padding: 2px 8px; border-radius: 4px; }
+        .brand-logo { height: 38px; width: auto; filter: invert(1) brightness(1.2); transition: transform 0.3s ease; }
+        .brand:hover .brand-logo { transform: rotate(15deg) scale(1.05); }
+        .brand .sub-tag { 
+            font-family: var(--font-body); 
+            font-size: 0.75rem; 
+            color: var(--nova-yellow); 
+            border: 1px solid rgba(255, 200, 87, 0.4); 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+        }
 
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--hex-cyan); }
+        .nav-links a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            transition: color 0.3s; 
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--nova-pink); }
 
+        /* --- Hero Section --- */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 10%; }
-        .hero-tag { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 4px; color: var(--hex-gold); margin-bottom: 1rem; font-weight: 600; }
-        .hero h1 { font-family: var(--font-display); font-size: 7.5rem; line-height: 0.85; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 40%, var(--hex-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 520px; margin-bottom: 3rem; }
+        
+        .hero-tag { 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            color: var(--nova-yellow); 
+            margin-bottom: 1rem; 
+            font-weight: 600; 
+        }
 
-        .btn-nova { font-weight: 800; font-size: 0.95rem; color: #000; background: linear-gradient(135deg, #ffffff, var(--hex-gold)); padding: 1.1rem 2.8rem; text-decoration: none; text-transform: uppercase; clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px); }
+        /* Gradiente en el título desde Blanco -> Rosa -> Amarillo */
+        .hero h1 { 
+            font-family: var(--font-display); 
+            font-size: 7.5rem; 
+            line-height: 0.85; 
+            margin-bottom: 1.5rem; 
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--nova-pink) 70%, var(--nova-yellow) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            filter: drop-shadow(0 0 35px rgba(255, 97, 216, 0.25));
+        }
+
+        .hero p { 
+            font-size: 1.15rem; 
+            color: var(--text-muted); 
+            max-width: 520px; 
+            margin-bottom: 3rem; 
+            line-height: 1.6;
+        }
+
+        /* Botón estilo Nova Rosa/Amarillo */
+        .btn-nova { 
+            font-weight: 800; 
+            font-size: 0.95rem; 
+            color: #0a050e; 
+            background: linear-gradient(135deg, var(--nova-pink), var(--nova-yellow)); 
+            padding: 1.1rem 2.8rem; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px); 
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-nova:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 97, 216, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+            .hero { padding: 0 6%; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navegación -->
     <nav>
         <div class="brand">
             <img src="logo.png" alt="STR Nova Logo" class="brand-logo">
@@ -57,11 +164,13 @@
         <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">DISCORD</a>
     </nav>
 
+    <!-- Hero Section con la nueva paleta -->
     <section class="hero">
         <span class="hero-tag">Teamfight Tactics Roster</span>
         <h1>STR NOVA</h1>
         <p>Maestros de la convergencia. Dominamos las composiciones de alto nivel, adaptándonos a cada aumentador y rotación de Set.</p>
         <a href="jugadores.html" class="btn-nova">VER JUGADORES</a>
     </section>
+
 </body>
 </html>
