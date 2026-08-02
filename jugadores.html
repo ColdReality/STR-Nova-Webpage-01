@@ -42,9 +42,9 @@
         .tactician-card { background: rgba(15, 20, 30, 0.6); border: 1px solid rgba(200, 170, 110, 0.15); border-radius: 12px; padding: 2rem; transition: all 0.4s ease; backdrop-filter: blur(10px); }
         .tactician-card:hover { transform: translateY(-8px); border-color: var(--hex-cyan); box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15); }
 
-        .little-legend-avatar { width: 90px; height: 90px; border-radius: 50%; background: radial-gradient(circle, rgba(0,240,255,0.2) 0%, rgba(168,85,247,0.2) 100%); border: 2px solid var(--hex-gold); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .player-rank { font-size: 0.75rem; color: var(--hex-cyan); font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem; display: block; }
-        .player-alias { font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 0.5rem; color: #fff; }
+        .little-legend-avatar { width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle, rgba(0,240,255,0.2) 0%, rgba(168,85,247,0.2) 100%); border: 2px solid var(--hex-gold); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin-bottom: 1.2rem; }
+        .player-rank { font-size: 0.75rem; color: var(--hex-cyan); font-weight: 800; text-transform: uppercase; margin-bottom: 0.3rem; display: block; letter-spacing: 1px; }
+        .player-alias { font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.5rem; color: #fff; letter-spacing: -0.5px; }
         .favorite-comp { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
         .favorite-comp span { color: #fff; font-weight: 600; }
         .player-socials { display: flex; gap: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem; }
@@ -64,32 +64,112 @@
             <li><a href="jugadores.html" class="active">Jugadores</a></li>
             <li><a href="staff.html">Staff</a></li>
         </ul>
-        <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem; text-decoration:none; color:#000; background:linear-gradient(135deg, #fff, var(--hex-gold));">DISCORD</a>
+        <a href="#discord" style="padding: 0.6rem 1.4rem; font-size: 0.8rem; text-decoration:none; color:#000; background:linear-gradient(135deg, #fff, var(--hex-gold)); font-weight: 800; clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);">DISCORD</a>
     </nav>
 
     <section class="container">
         <h2 class="section-title">Nuestros Jugadores</h2>
         <div class="roster-grid">
+
             <div class="tactician-card">
                 <div class="little-legend-avatar">🦉</div>
-                <span class="player-rank">CHALLENGER • 1,200 LP</span>
-                <h3 class="player-alias">CYPHER</h3>
-                <p class="favorite-comp">Estilo: <span>Flex Fast 8 / Reroll</span></p>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">Shisho</h3>
+                <p class="favorite-comp">Estilo: <span>Flex Fast 8</span></p>
                 <div class="player-socials">
-                    <a href="#" target="_blank">TWITCH</a>
-                    <a href="#" target="_blank">X (TWITTER)</a>
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
+
             <div class="tactician-card">
                 <div class="little-legend-avatar">🐉</div>
-                <span class="player-rank">GRANDMASTER • 650 LP</span>
-                <h3 class="player-alias">NOVA</h3>
-                <p class="favorite-comp">Estilo: <span>Tempo Aggro / Lose Streak</span></p>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">Xehan</h3>
+                <p class="favorite-comp">Estilo: <span>Tempo Aggro</span></p>
                 <div class="player-socials">
-                    <a href="#" target="_blank">TWITCH</a>
-                    <a href="#" target="_blank">X (TWITTER)</a>
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">⚔️</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">LOBR</h3>
+                <p class="favorite-comp">Estilo: <span>Reroll Meta</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">👑</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">NinePhiro</h3>
+                <p class="favorite-comp">Estilo: <span>Flex Fast 9</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">🎯</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">SamFisher</h3>
+                <p class="favorite-comp">Estilo: <span>Lose Streak Economy</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">❄️</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">Seasøns</h3>
+                <p class="favorite-comp">Estilo: <span>Standard Leveling</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">⚡</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">Gorowicz</h3>
+                <p class="favorite-comp">Estilo: <span>Tempo Aggro</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">🦊</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">pammpann</h3>
+                <p class="favorite-comp">Estilo: <span>Reroll Meta</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <div class="tactician-card">
+                <div class="little-legend-avatar">✨</div>
+                <span class="player-rank">TACTICIAN</span>
+                <h3 class="player-alias">virtualsita</h3>
+                <p class="favorite-comp">Estilo: <span>Flex Fast 8</span></p>
+                <div class="player-socials">
+                    <a href="https://twitch.tv" target="_blank">TWITCH</a>
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
         </div>
     </section>
 </body>
