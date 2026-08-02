@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STR NOVA :: Staff</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #050608;
+            --text-main: #ffffff;
+            --text-muted: #8e9bb0;
+            --hex-cyan: #00f0ff;
+            --hex-gold: #c8aa6e;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-black); color: var(--text-main); font-family: var(--font-body); padding-top: 6rem; }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 6%; background: rgba(5, 6, 8, 0.85); backdrop-filter: blur(12px);
+            position: fixed; width: 100%; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(200, 170, 110, 0.15);
+        }
+
+        .brand { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 12px; }
+        .brand-logo { height: 38px; width: auto; filter: invert(1) brightness(1.2); }
+        .brand .sub-tag { font-family: var(--font-body); font-size: 0.75rem; color: var(--hex-gold); border: 1px solid rgba(200, 170, 110, 0.3); padding: 2px 8px; border-radius: 4px; }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--hex-cyan); }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-family: var(--font-display); font-size: 3.5rem; margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; }
+        .section-title::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(90deg, rgba(200, 170, 110, 0.4), transparent); }
+
+        .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .staff-card { background: rgba(15, 20, 30, 0.5); border: 1px solid rgba(200, 170, 110, 0.12); border-radius: 10px; padding: 1.5rem; transition: all 0.4s ease; backdrop-filter: blur(10px); }
+        .staff-card:hover { transform: translateY(-8px); border-color: var(--hex-gold); box-shadow: 0 10px 25px rgba(200, 170, 110, 0.15); }
+
+        .staff-role { font-size: 0.7rem; color: var(--hex-gold); font-weight: 800; text-transform: uppercase; margin-bottom: 0.2rem; display: block; }
+        .staff-alias { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 1rem; color: #fff; }
+        .player-socials a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: color 0.3s; }
+        .player-socials a:hover { color: var(--hex-gold); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <img src="logo.png" alt="STR Nova Logo" class="brand-logo">
+            <span>STR NOVA</span>
+            <span class="sub-tag">TFT</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="jugadores.html">Jugadores</a></li>
+            <li><a href="staff.html" class="active">Staff</a></li>
+        </ul>
+        <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem; text-decoration:none; color:#000; background:linear-gradient(135deg, #fff, var(--hex-gold));">DISCORD</a>
+    </nav>
+
+    <section class="container">
+        <h2 class="section-title">Staff</h2>
+        <div class="staff-grid">
+            <div class="staff-card">
+                <span class="staff-role">CEO / Founder</span>
+                <h3 class="staff-alias">BLANK</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+            <div class="staff-card">
+                <span class="staff-role">Head Coach</span>
+                <h3 class="staff-alias">KAIZEN</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
