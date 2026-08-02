@@ -1,0 +1,168 @@
+<!-- Fuentes Futuristas -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-dark: #090a0f;
+    --card-bg: rgba(18, 22, 34, 0.85);
+    --primary: #00f0ff;
+    --primary-glow: rgba(0, 240, 255, 0.4);
+    --accent: #7000ff;
+    --text-main: #f0f4f8;
+    --text-muted: #8a99ad;
+    --border: rgba(0, 240, 255, 0.2);
+  }
+
+  /* Aplica la fuente principal */
+  body, p, span, li, a {
+    font-family: 'Rajdhani', sans-serif !important;
+  }
+
+  h1, h2, h3, .esports-title {
+    font-family: 'Orbitron', sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* Estilo general para contenedores en Jimdo */
+  .esports-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: var(--text-main);
+  }
+
+  .esports-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
+  }
+
+  .esports-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto 0;
+    box-shadow: 0 0 10px var(--primary);
+  }
+
+  /* Roster Cards */
+  .roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .player-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .player-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.25);
+  }
+
+  .player-img {
+    width: 100%;
+    height: 220px;
+    background: #121622;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+  }
+
+  .player-info {
+    padding: 1.2rem;
+  }
+
+  .player-role {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .player-alias {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0.2rem 0;
+    color: #fff;
+  }
+
+  .player-name {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* Matches Cards */
+  .match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .match-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+  }
+
+  .match-team {
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 40%;
+    color: #fff;
+  }
+
+  .match-team.away {
+    text-align: right;
+  }
+
+  .match-vs {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary);
+    font-weight: 800;
+    background: rgba(0, 240, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Buttons */
+  .btn-esports {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff !important;
+    padding: 0.8rem 2rem;
+    border: none;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif !important;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-esports:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--primary-glow);
+  }
+
+  @media (max-width: 768px) {
+    .match-card { flex-direction: column; gap: 0.8rem; text-align: center; }
+    .match-team, .match-team.away { width: 100%; text-align: center; }
+  }
+</style>
