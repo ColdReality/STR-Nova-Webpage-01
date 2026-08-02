@@ -3,378 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STR NOVA :: TFT Division</title>
-    <!-- Fuentes Elegantes e Impactantes -->
+    <title>STR NOVA :: Inicio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-black: #050608;
             --text-main: #ffffff;
             --text-muted: #8e9bb0;
-            
-            /* Paleta Iridiscente + Cristal Hextech */
             --hex-cyan: #00f0ff;
             --hex-gold: #c8aa6e;
-            --irid-purple: rgba(168, 85, 247, 0.6);
-            --irid-blue: rgba(59, 130, 246, 0.6);
-            
             --font-display: 'Playfair Display', serif;
             --font-body: 'Work Sans', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-black); color: var(--text-main); font-family: var(--font-body); }
 
-        body {
-            background-color: var(--bg-black);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Ambientación de fondo Iridiscente / Hextech */
-        body::before, body::after {
-            content: "";
-            position: fixed;
-            width: 70vmax;
-            height: 70vmax;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-            filter: blur(100px);
-            opacity: 0.2;
-        }
-
-        body::before {
-            top: -20%;
-            left: -10%;
-            background: radial-gradient(circle, var(--irid-purple) 0%, transparent 70%);
-        }
-
-        body::after {
-            bottom: -20%;
-            right: -10%;
-            background: radial-gradient(circle, var(--hex-cyan) 0%, transparent 70%);
-        }
-
-        /* --- Navegación --- */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 6%;
-            background: rgba(5, 6, 8, 0.85);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 6%; background: rgba(5, 6, 8, 0.85); backdrop-filter: blur(12px);
+            position: fixed; width: 100%; top: 0; z-index: 100;
             border-bottom: 1px solid rgba(200, 170, 110, 0.15);
         }
 
-        /* Logo y Nombre de la Organización */
-        .brand {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .brand { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 12px; }
+        .brand-logo { height: 38px; width: auto; filter: invert(1) brightness(1.2); }
+        .brand .sub-tag { font-family: var(--font-body); font-size: 0.75rem; color: var(--hex-gold); border: 1px solid rgba(200, 170, 110, 0.3); padding: 2px 8px; border-radius: 4px; }
 
-        .brand-logo {
-            height: 38px;
-            width: auto;
-            filter: invert(1) brightness(1.2); /* Convierte el logo de negro a blanco luminoso */
-            transition: transform 0.3s ease;
-        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--hex-cyan); }
 
-        .brand:hover .brand-logo {
-            transform: rotate(15deg) scale(1.05);
-        }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 10%; }
+        .hero-tag { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 4px; color: var(--hex-gold); margin-bottom: 1rem; font-weight: 600; }
+        .hero h1 { font-family: var(--font-display); font-size: 7.5rem; line-height: 0.85; margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 40%, var(--hex-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 520px; margin-bottom: 3rem; }
 
-        .brand .sub-tag {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.75rem;
-            color: var(--hex-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid rgba(200, 170, 110, 0.3);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--hex-cyan);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0 10%;
-            position: relative;
-        }
-
-        .hero-tag {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--hex-gold);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: 7.5rem;
-            line-height: 0.85;
-            margin-bottom: 1.5rem;
-            letter-spacing: -3px;
-            background: linear-gradient(135deg, #ffffff 40%, var(--hex-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            font-weight: 300;
-            color: var(--text-muted);
-            max-width: 520px;
-            margin-bottom: 3rem;
-            line-height: 1.6;
-        }
-
-        .btn-nova {
-            font-family: var(--font-body);
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: #000;
-            background: linear-gradient(135deg, #ffffff, var(--hex-gold));
-            padding: 1.1rem 2.8rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
-            display: inline-block;
-        }
-
-        .btn-nova:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(200, 170, 110, 0.4);
-        }
-
-        /* --- Section Container --- */
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            margin-bottom: 4rem;
-            letter-spacing: -2px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .section-title::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: linear-gradient(90deg, rgba(200, 170, 110, 0.4), transparent);
-        }
-
-        /* --- Roster Cards (Jugadores) --- */
-        .roster-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .tactician-card {
-            background: rgba(15, 20, 30, 0.6);
-            border: 1px solid rgba(200, 170, 110, 0.15);
-            border-radius: 12px;
-            padding: 2rem;
-            position: relative;
-            transition: all 0.4s ease;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .tactician-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--hex-cyan);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
-        }
-
-        /* Avatar de Minileyenda */
-        .little-legend-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0,240,255,0.2) 0%, rgba(168,85,247,0.2) 100%);
-            border: 2px solid var(--hex-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 15px rgba(200, 170, 110, 0.2);
-            overflow: hidden;
-        }
-
-        .little-legend-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .player-rank {
-            font-size: 0.75rem;
-            color: var(--hex-cyan);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.3rem;
-            display: block;
-        }
-
-        .player-alias {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .favorite-comp {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
-        }
-
-        .favorite-comp span {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .player-socials {
-            display: flex;
-            gap: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1rem;
-        }
-
-        .player-socials a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .player-socials a:hover {
-            color: var(--hex-gold);
-        }
-
-        /* --- Staff Cards --- */
-        .staff-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .staff-card {
-            background: rgba(15, 20, 30, 0.5);
-            border: 1px solid rgba(200, 170, 110, 0.12);
-            border-radius: 10px;
-            padding: 1.5rem;
-            position: relative;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .staff-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--hex-gold);
-            box-shadow: 0 10px 25px rgba(200, 170, 110, 0.15);
-        }
-
-        .staff-role {
-            font-size: 0.7rem;
-            color: var(--hex-gold);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.2rem;
-            display: block;
-        }
-
-        .staff-alias {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            letter-spacing: -0.5px;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        /* --- Footer --- */
-        footer {
-            border-top: 1px solid rgba(200, 170, 110, 0.15);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            background: #030405;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 4.5rem; }
-            .hero { padding: 0 6%; }
-            .section-title { font-size: 2.5rem; }
-            .nav-links { display: none; }
-        }
+        .btn-nova { font-weight: 800; font-size: 0.95rem; color: #000; background: linear-gradient(135deg, #ffffff, var(--hex-gold)); padding: 1.1rem 2.8rem; text-decoration: none; text-transform: uppercase; clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px); }
     </style>
 </head>
 <body>
-
-    <!-- Navegación -->
     <nav>
         <div class="brand">
             <img src="logo.png" alt="STR Nova Logo" class="brand-logo">
@@ -382,124 +50,18 @@
             <span class="sub-tag">TFT</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#players">Jugadores</a></li>
-            <li><a href="#staff">Staff</a></li>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="jugadores.html">Jugadores</a></li>
+            <li><a href="staff.html">Staff</a></li>
         </ul>
         <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">DISCORD</a>
     </nav>
 
-    <!-- Hero Section TFT -->
     <section class="hero">
         <span class="hero-tag">Teamfight Tactics Roster</span>
         <h1>STR NOVA</h1>
         <p>Maestros de la convergencia. Dominamos las composiciones de alto nivel, adaptándonos a cada aumentador y rotación de Set.</p>
-        <a href="#players" class="btn-nova">VER JUGADORES</a>
+        <a href="jugadores.html" class="btn-nova">VER JUGADORES</a>
     </section>
-
-    <!-- Sección Jugadores -->
-    <section id="players" class="container">
-        <h2 class="section-title">Nuestros Jugadores</h2>
-        <div class="roster-grid">
-            
-            <!-- Jugador 1 -->
-            <div class="tactician-card">
-                <div class="little-legend-avatar">🦉</div>
-                <span class="player-rank">CHALLENGER • 1,200 LP</span>
-                <h3 class="player-alias">CYPHER</h3>
-                <p class="favorite-comp">Estilo: <span>Flex Fast 8 / Reroll</span></p>
-                <div class="player-socials">
-                    <a href="#" target="_blank">TWITCH</a>
-                    <a href="#" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-            <!-- Jugador 2 -->
-            <div class="tactician-card">
-                <div class="little-legend-avatar">🐉</div>
-                <span class="player-rank">GRANDMASTER • 650 LP</span>
-                <h3 class="player-alias">NOVA</h3>
-                <p class="favorite-comp">Estilo: <span>Tempo Aggro / Lose Streak</span></p>
-                <div class="player-socials">
-                    <a href="#" target="_blank">TWITCH</a>
-                    <a href="#" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-            <!-- Jugador 3 -->
-            <div class="tactician-card">
-                <div class="little-legend-avatar">🦊</div>
-                <span class="player-rank">MASTER • 300 LP</span>
-                <h3 class="player-alias">PENGU</h3>
-                <p class="favorite-comp">Estilo: <span>Vertical Comps / Econ</span></p>
-                <div class="player-socials">
-                    <a href="#" target="_blank">TWITCH</a>
-                    <a href="#" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-            <!-- Jugador 4 -->
-            <div class="tactician-card">
-                <div class="little-legend-avatar">🐧</div>
-                <span class="player-rank">MASTER • 150 LP</span>
-                <h3 class="player-alias">AEGIS</h3>
-                <p class="favorite-comp">Estilo: <span>Melee Carry / Reroll 3-Cost</span></p>
-                <div class="player-socials">
-                    <a href="#" target="_blank">TWITCH</a>
-                    <a href="#" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Sección Staff -->
-    <section id="staff" class="container" style="padding-top: 2rem;">
-        <h2 class="section-title">Staff</h2>
-        <div class="staff-grid">
-            
-            <!-- Staff 1 -->
-            <div class="staff-card">
-                <span class="staff-role">CEO / Founder</span>
-                <h3 class="staff-alias">BLANK</h3>
-                <div class="player-socials">
-                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-            <!-- Staff 2 -->
-            <div class="staff-card">
-                <span class="staff-role">Head Coach</span>
-                <h3 class="staff-alias">KAIZEN</h3>
-                <div class="player-socials">
-                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-            <!-- Staff 3 -->
-            <div class="staff-card">
-                <span class="staff-role">Analyst</span>
-                <h3 class="staff-alias">SOLAR</h3>
-                <div class="player-socials">
-                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-            <!-- Staff 4 -->
-            <div class="staff-card">
-                <span class="staff-role">Manager</span>
-                <h3 class="staff-alias">LUNA</h3>
-                <div class="player-socials">
-                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 STR NOVA Esports. No afiliado a Riot Games. Teamfight Tactics es marca registrada de Riot Games.</p>
-    </footer>
-
 </body>
 </html>
