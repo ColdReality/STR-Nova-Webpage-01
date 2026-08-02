@@ -90,7 +90,7 @@
         }
 
         .brand-logo {
-            height: 48px;
+            height: 38px;
             width: auto;
             filter: invert(1) brightness(1.2); /* Convierte el logo de negro a blanco luminoso */
             transition: transform 0.3s ease;
@@ -196,7 +196,7 @@
         .container {
             max-width: 1300px;
             margin: 0 auto;
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .section-title {
@@ -216,7 +216,7 @@
             background: linear-gradient(90deg, rgba(200, 170, 110, 0.4), transparent);
         }
 
-        /* --- Roster Cards (Minileyendas & Jugadores) --- */
+        /* --- Roster Cards (Jugadores) --- */
         .roster-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -313,6 +313,47 @@
             color: var(--hex-gold);
         }
 
+        /* --- Staff Cards --- */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .staff-card {
+            background: rgba(15, 20, 30, 0.5);
+            border: 1px solid rgba(200, 170, 110, 0.12);
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .staff-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--hex-gold);
+            box-shadow: 0 10px 25px rgba(200, 170, 110, 0.15);
+        }
+
+        .staff-role {
+            font-size: 0.7rem;
+            color: var(--hex-gold);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .staff-alias {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
         /* --- Footer --- */
         footer {
             border-top: 1px solid rgba(200, 170, 110, 0.15);
@@ -341,8 +382,8 @@
             <span class="sub-tag">TFT</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#tacticians">Tácticos</a></li>
-            <li><a href="#about">Estrategia</a></li>
+            <li><a href="#players">Jugadores</a></li>
+            <li><a href="#staff">Staff</a></li>
         </ul>
         <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">DISCORD</a>
     </nav>
@@ -352,59 +393,103 @@
         <span class="hero-tag">Teamfight Tactics Roster</span>
         <h1>STR NOVA</h1>
         <p>Maestros de la convergencia. Dominamos las composiciones de alto nivel, adaptándonos a cada aumentador y rotación de Set.</p>
-        <a href="#tacticians" class="btn-nova">VER TÁCTICOS</a>
+        <a href="#players" class="btn-nova">VER JUGADORES</a>
     </section>
 
-    <!-- Roster Section con Minileyendas -->
-    <section id="tacticians" class="container">
-        <h2 class="section-title">Nuestros Tácticos</h2>
+    <!-- Sección Jugadores -->
+    <section id="players" class="container">
+        <h2 class="section-title">Nuestros Jugadores</h2>
         <div class="roster-grid">
             
-            <!-- Táctico 1 -->
+            <!-- Jugador 1 -->
             <div class="tactician-card">
                 <div class="little-legend-avatar">🦉</div>
                 <span class="player-rank">CHALLENGER • 1,200 LP</span>
                 <h3 class="player-alias">CYPHER</h3>
                 <p class="favorite-comp">Estilo: <span>Flex Fast 8 / Reroll</span></p>
                 <div class="player-socials">
-                    <a href="#">TWITCH</a>
-                    <a href="#">X (TWITTER)</a>
+                    <a href="#" target="_blank">TWITCH</a>
+                    <a href="#" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
 
-            <!-- Táctico 2 -->
+            <!-- Jugador 2 -->
             <div class="tactician-card">
                 <div class="little-legend-avatar">🐉</div>
                 <span class="player-rank">GRANDMASTER • 650 LP</span>
                 <h3 class="player-alias">NOVA</h3>
                 <p class="favorite-comp">Estilo: <span>Tempo Aggro / Lose Streak</span></p>
                 <div class="player-socials">
-                    <a href="#">TWITCH</a>
-                    <a href="#">X (TWITTER)</a>
+                    <a href="#" target="_blank">TWITCH</a>
+                    <a href="#" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
 
-            <!-- Táctico 3 -->
+            <!-- Jugador 3 -->
             <div class="tactician-card">
                 <div class="little-legend-avatar">🦊</div>
                 <span class="player-rank">MASTER • 300 LP</span>
                 <h3 class="player-alias">PENGU</h3>
                 <p class="favorite-comp">Estilo: <span>Vertical Comps / Econ</span></p>
                 <div class="player-socials">
-                    <a href="#">TWITCH</a>
-                    <a href="#">X (TWITTER)</a>
+                    <a href="#" target="_blank">TWITCH</a>
+                    <a href="#" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
 
-            <!-- Táctico 4 -->
+            <!-- Jugador 4 -->
             <div class="tactician-card">
                 <div class="little-legend-avatar">🐧</div>
                 <span class="player-rank">MASTER • 150 LP</span>
                 <h3 class="player-alias">AEGIS</h3>
                 <p class="favorite-comp">Estilo: <span>Melee Carry / Reroll 3-Cost</span></p>
                 <div class="player-socials">
-                    <a href="#">TWITCH</a>
-                    <a href="#">X (TWITTER)</a>
+                    <a href="#" target="_blank">TWITCH</a>
+                    <a href="#" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección Staff -->
+    <section id="staff" class="container" style="padding-top: 2rem;">
+        <h2 class="section-title">Staff</h2>
+        <div class="staff-grid">
+            
+            <!-- Staff 1 -->
+            <div class="staff-card">
+                <span class="staff-role">CEO / Founder</span>
+                <h3 class="staff-alias">BLANK</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <!-- Staff 2 -->
+            <div class="staff-card">
+                <span class="staff-role">Head Coach</span>
+                <h3 class="staff-alias">KAIZEN</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <!-- Staff 3 -->
+            <div class="staff-card">
+                <span class="staff-role">Analyst</span>
+                <h3 class="staff-alias">SOLAR</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <!-- Staff 4 -->
+            <div class="staff-card">
+                <span class="staff-role">Manager</span>
+                <h3 class="staff-alias">LUNA</h3>
+                <div class="player-socials">
+                    <a href="https://x.com" target="_blank">X (TWITTER)</a>
                 </div>
             </div>
 
