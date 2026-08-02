@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STR NOVA :: Digital Hub</title>
+    <title>STR NOVA :: TFT Division</title>
     <!-- Fuentes Elegantes e Impactantes -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=Work+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-black: #000000;
+            --bg-black: #050608;
             --text-main: #ffffff;
-            --text-muted: #aaaaaa;
+            --text-muted: #8e9bb0;
             
-            /* Paleta Iridiscente/Vibrant extraída de la imagen */
-            --irid-blue: rgba(100, 150, 255, 0.7);
-            --irid-purple: rgba(180, 100, 255, 0.7);
-            --irid-cyan: rgba(100, 255, 230, 0.6);
+            /* Paleta Iridiscente + Cristal Hextech */
+            --hex-cyan: #00f0ff;
+            --hex-gold: #c8aa6e;
+            --irid-purple: rgba(168, 85, 247, 0.6);
+            --irid-blue: rgba(59, 130, 246, 0.6);
             
-            /* Fuentes */
-            --font-display: 'Playfair Display', serif; /* Para títulos grandes */
-            --font-body: 'Work Sans', sans-serif; /* Para texto general */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Work Sans', sans-serif;
         }
 
         * {
@@ -37,70 +37,65 @@
             position: relative;
         }
 
-        /* --- Fondos de Flores de Cristal Iridiscente (Simulado) --- */
-        /* Estos pseudo-elementos crean formas abstractas iridiscentes 
-           que evocan los pétalos de cristal de la imagen */
+        /* Ambientación de fondo Iridiscente / Hextech */
         body::before, body::after {
             content: "";
             position: fixed;
-            width: 80vmax;
-            height: 80vmax;
+            width: 70vmax;
+            height: 70vmax;
             border-radius: 50%;
             pointer-events: none;
             z-index: -1;
-            filter: blur(80px);
-            opacity: 0.25;
+            filter: blur(100px);
+            opacity: 0.2;
         }
 
         body::before {
             top: -20%;
-            left: -20%;
+            left: -10%;
             background: radial-gradient(circle, var(--irid-purple) 0%, transparent 70%);
         }
 
         body::after {
-            bottom: -30%;
+            bottom: -20%;
             right: -10%;
-            background: radial-gradient(circle, var(--irid-blue) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--hex-cyan) 0%, transparent 70%);
         }
 
-        /* Títulos */
-        h1, h2, h3, .brand {
-            font-family: var(--font-display);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-        }
-
-        /* --- Navegación Minimalista --- */
+        /* --- Navegación --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 5%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 1.8rem 6%;
+            background: rgba(5, 6, 8, 0.85);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(200, 170, 110, 0.15);
         }
 
         .brand {
-            font-size: 2rem;
-            letter-spacing: -3px;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: -1px;
             color: #fff;
         }
 
         .brand span {
             font-family: var(--font-body);
-            font-weight: 300;
-            font-size: 1rem;
-            margin-left: 10px;
-            text-transform: none;
-            letter-spacing: 0;
-            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-left: 8px;
+            color: var(--hex-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid rgba(200, 170, 110, 0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
         }
 
         .nav-links {
@@ -113,14 +108,14 @@
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #fff;
+            color: var(--hex-cyan);
         }
 
         /* --- Hero Section --- */
@@ -134,64 +129,66 @@
             position: relative;
         }
 
-        .hero h1 {
-            font-size: 8rem;
-            line-height: 0.85;
+        .hero-tag {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--hex-gold);
             margin-bottom: 1rem;
-            position: relative;
+            font-weight: 600;
         }
 
-        /* Efecto de brillo sutil e iridiscente en el título */
-        .hero h1::after {
-            content: "STR NOVA";
-            position: absolute;
-            left: 0; top: 0;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255,255,255,0.1);
-            filter: blur(2px);
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 7.5rem;
+            line-height: 0.85;
+            margin-bottom: 1.5rem;
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--hex-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 300;
             color: var(--text-muted);
-            max-width: 500px;
+            max-width: 520px;
             margin-bottom: 3rem;
             line-height: 1.6;
         }
 
-        /* Botón con forma poligonal (como en la imagen original) pero más elegante */
         .btn-nova {
             font-family: var(--font-body);
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: #000;
-            background-color: #fff;
-            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #ffffff, var(--hex-gold));
+            padding: 1.1rem 2.8rem;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
-            clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
+            clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+            display: inline-block;
         }
 
         .btn-nova:hover {
-            background-color: transparent;
-            color: #fff;
-            box-shadow: 0 0 15px rgba(255,255,255,0.2) inset;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(200, 170, 110, 0.4);
         }
 
-        /* --- Secciones Principales --- */
+        /* --- Section Container --- */
         .container {
             max-width: 1300px;
             margin: 0 auto;
-            padding: 10rem 2rem;
+            padding: 8rem 2rem;
         }
 
         .section-title {
-            text-align: left;
-            font-size: 4rem;
-            margin-bottom: 5rem;
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            margin-bottom: 4rem;
             letter-spacing: -2px;
             display: flex;
             align-items: center;
@@ -202,85 +199,96 @@
             content: "";
             height: 1px;
             flex-grow: 1;
-            background: linear-gradient(90deg, #fff, transparent);
-            opacity: 0.2;
+            background: linear-gradient(90deg, rgba(200, 170, 110, 0.4), transparent);
         }
 
-        /* --- Roster Section (Tarjetas Minimalistas) --- */
+        /* --- Roster Cards (Minileyendas & Jugadores) --- */
         .roster-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .player-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
+        .tactician-card {
+            background: rgba(15, 20, 30, 0.6);
+            border: 1px solid rgba(200, 170, 110, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
             position: relative;
             transition: all 0.4s ease;
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
-        /* Simulación de reflejo de cristal iridiscente en hover */
-        .player-card::before {
-            content: "";
-            position: absolute;
-            top: -150%; left: -150%;
-            width: 300%; height: 300%;
-            background: radial-gradient(circle, 
-                var(--irid-cyan) 0%, 
-                var(--irid-purple) 20%, 
-                transparent 60%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 0;
-            pointer-events: none;
+        .tactician-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--hex-cyan);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
         }
 
-        .player-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255,255,255,0.1);
+        /* Avatar de Minileyenda con borde iridiscente */
+        .little-legend-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,240,255,0.2) 0%, rgba(168,85,247,0.2) 100%);
+            border: 2px solid var(--hex-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 15px rgba(200, 170, 110, 0.2);
+            overflow: hidden;
         }
 
-        .player-card:hover::before {
-            opacity: 0.1;
+        .little-legend-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .player-info {
-            position: relative;
-            z-index: 1;
-        }
-
-        .player-role {
-            font-family: var(--font-body);
-            font-weight: 300;
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .player-rank {
+            font-size: 0.75rem;
+            color: var(--hex-cyan);
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             display: block;
         }
 
         .player-alias {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             letter-spacing: -1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             color: #fff;
         }
 
-        /* Redes Sociales del Jugador (Iconos minimalistas) */
+        .favorite-comp {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .favorite-comp span {
+            color: #fff;
+            font-weight: 600;
+        }
+
         .player-socials {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
         }
 
         .player-socials a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -288,28 +296,22 @@
         }
 
         .player-socials a:hover {
-            color: #fff;
+            color: var(--hex-gold);
         }
 
         /* --- Footer --- */
         footer {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 5rem 2rem;
+            border-top: 1px solid rgba(200, 170, 110, 0.15);
+            padding: 4rem 2rem;
             text-align: center;
             color: var(--text-muted);
-            background: #000;
-            font-weight: 300;
-            font-size: 0.9rem;
-        }
-
-        /* --- Responsividad --- */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 6rem; }
+            font-size: 0.85rem;
+            background: #030405;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 4rem; text-align: center; align-self: center; }
-            .hero { align-items: center; text-align: center; padding: 0 5%; }
+            .hero h1 { font-size: 4.5rem; }
+            .hero { padding: 0 6%; }
             .section-title { font-size: 2.5rem; }
             .nav-links { display: none; }
         }
@@ -317,73 +319,77 @@
 </head>
 <body>
 
-    <!-- Navegación Minimalista -->
+    <!-- Navegación -->
     <nav>
-        <div class="brand">STR NOVA <span>Digital Hub</span></div>
+        <div class="brand">STR NOVA <span>TFT</span></div>
         <ul class="nav-links">
-            <li><a href="#roster">Roster</a></li>
-            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#tacticians">Tácticos</a></li>
+            <li><a href="#about">Estrategia</a></li>
         </ul>
-        <a href="#join" class="btn-nova" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">UNIRSE</a>
+        <a href="#discord" class="btn-nova" style="padding: 0.6rem 1.4rem; font-size: 0.8rem;">DISCORD</a>
     </nav>
 
-    <!-- Hero Section con Tipografía Bold y Tono Oscuro -->
+    <!-- Hero Section TFT -->
     <section class="hero">
+        <span class="hero-tag">Teamfight Tactics Roster</span>
         <h1>STR NOVA</h1>
-        <p>Un campo de flores se convierte en un tejido de sensaciones. Somos más que un equipo; somos una sinfonía digital de talento y pasión.</p>
-        <a href="#roster" class="btn-nova">VER EQUIPO</a>
+        <p>Maestros de la convergencia. Dominamos las composiciones de alto nivel, adaptándonos a cada aumentador y rotación de Set.</p>
+        <a href="#tacticians" class="btn-nova">VER TÁCTICOS</a>
     </section>
 
-    <!-- Roster Section con Estética de Cristal Iridiscente -->
-    <section id="roster" class="container">
-        <h2 class="section-title">El Elenco</h2>
+    <!-- Roster Section con Minileyendas -->
+    <section id="tacticians" class="container">
+        <h2 class="section-title">Nuestros Tácticos</h2>
         <div class="roster-grid">
             
-            <!-- Jugador 1 -->
-            <div class="player-card">
-                <div class="player-info">
-                    <span class="player-role">Mid Laner / Capitán</span>
-                    <h3 class="player-alias">GOSSAMER</h3>
+            <!-- Táctico 1 -->
+            <div class="tactician-card">
+                <!-- Puedes cambiar el emoji 🦉 por la URL de la foto de la Minileyenda en un <img> -->
+                <div class="little-legend-avatar">🦉</div>
+                <span class="player-rank">CHALLENGER • 1,200 LP</span>
+                <h3 class="player-alias">CYPHER</h3>
+                <p class="favorite-comp">Estilo: <span>Flex Fast 8 / Reroll</span></p>
+                <div class="player-socials">
+                    <a href="#">TWITCH</a>
+                    <a href="#">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <!-- Táctico 2 -->
+            <div class="tactician-card">
+                <div class="little-legend-avatar">🐉</div>
+                <span class="player-rank">GRANDMASTER • 650 LP</span>
+                <h3 class="player-alias">NOVA</h3>
+                <p class="favorite-comp">Estilo: <span>Tempo Aggro / Lose Streak</span></p>
+                <div class="player-socials">
+                    <a href="#">TWITCH</a>
+                    <a href="#">X (TWITTER)</a>
+                </div>
+            </div>
+
+            <!-- Táctico 3 -->
+            <div class="tactician-card">
+                <div class="tactician-card-inner">
+                    <div class="little-legend-avatar">🦊</div>
+                    <span class="player-rank">MASTER • 300 LP</span>
+                    <h3 class="player-alias">PENGU</h3>
+                    <p class="favorite-comp">Estilo: <span>Vertical Comps / Econ</span></p>
                     <div class="player-socials">
-                        <a href="#">TWITTER</a>
                         <a href="#">TWITCH</a>
+                        <a href="#">X (TWITTER)</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Jugador 2 -->
-            <div class="player-card">
-                <div class="player-info">
-                    <span class="player-role">ADC</span>
-                    <h3 class="player-alias">SPAX-G</h3>
-                    <div class="player-socials">
-                        <a href="#">TWITTER</a>
-                        <a href="#">TWITCH</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Jugador 3 -->
-            <div class="player-card">
-                <div class="player-info">
-                    <span class="player-role">Support</span>
-                    <h3 class="player-alias">VELVET</h3>
-                    <div class="player-socials">
-                        <a href="#">TWITTER</a>
-                        <a href="#">TWITCH</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Jugador 4 -->
-            <div class="player-card">
-                <div class="player-info">
-                    <span class="player-role">Jungler</span>
-                    <h3 class="player-alias">SHADOW</h3>
-                    <div class="player-socials">
-                        <a href="#">TWITTER</a>
-                        <a href="#">TWITCH</a>
-                    </div>
+            <!-- Táctico 4 -->
+            <div class="tactician-card">
+                <div class="little-legend-avatar">🐧</div>
+                <span class="player-rank">MASTER • 150 LP</span>
+                <h3 class="player-alias">AEGIS</h3>
+                <p class="favorite-comp">Estilo: <span>Melee Carry / Reroll 3-Cost</span></p>
+                <div class="player-socials">
+                    <a href="#">TWITCH</a>
+                    <a href="#">X (TWITTER)</a>
                 </div>
             </div>
 
@@ -392,7 +398,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 STR NOVA Organization. Patrones intrincados. Sinestesia Digital.</p>
+        <p>&copy; 2026 STR NOVA Esports. No afiliado a Riot Games. Teamfight Tactics es marca registrada de Riot Games.</p>
     </footer>
 
 </body>
