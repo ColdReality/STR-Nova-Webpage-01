@@ -1,168 +1,422 @@
-<!-- Fuentes Futuristas -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLANK Esports | Official Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090a0f;
+            --card-bg: rgba(18, 22, 34, 0.75);
+            --primary: #00f0ff;
+            --primary-glow: rgba(0, 240, 255, 0.4);
+            --accent: #7000ff;
+            --text-main: #f0f4f8;
+            --text-muted: #8a99ad;
+            --border: rgba(0, 240, 255, 0.15);
+        }
 
-<style>
-  :root {
-    --bg-dark: #090a0f;
-    --card-bg: rgba(18, 22, 34, 0.85);
-    --primary: #00f0ff;
-    --primary-glow: rgba(0, 240, 255, 0.4);
-    --accent: #7000ff;
-    --text-main: #f0f4f8;
-    --text-muted: #8a99ad;
-    --border: rgba(0, 240, 255, 0.2);
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rajdhani', sans-serif;
+        }
 
-  /* Aplica la fuente principal */
-  body, p, span, li, a {
-    font-family: 'Rajdhani', sans-serif !important;
-  }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.12) 0%, transparent 40%);
+        }
 
-  h1, h2, h3, .esports-title {
-    font-family: 'Orbitron', sans-serif !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+        /* Ambient Noise Lines */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0.6;
+        }
 
-  /* Estilo general para contenedores en Jimdo */
-  .esports-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    color: var(--text-main);
-  }
+        h1, h2, h3, .brand {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-  .esports-title {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    color: #fff;
-    position: relative;
-  }
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(9, 10, 15, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 50;
+        }
 
-  .esports-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--primary);
-    margin: 10px auto 0;
-    box-shadow: 0 0 10px var(--primary);
-  }
+        .brand {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
 
-  /* Roster Cards */
-  .roster-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
+        .brand span {
+            color: var(--primary);
+        }
 
-  .player-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-  .player-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary);
-    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.25);
-  }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
 
-  .player-img {
-    width: 100%;
-    height: 220px;
-    background: #121622;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-  }
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 8px var(--primary-glow);
+        }
 
-  .player-info {
-    padding: 1.2rem;
-  }
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            padding: 0.6rem 1.6rem;
+            border: none;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-  .player-role {
-    font-size: 0.8rem;
-    color: var(--primary);
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
 
-  .player-alias {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin: 0.2rem 0;
-    color: #fff;
-  }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+        }
 
-  .player-name {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-  }
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #fff 30%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px var(--primary-glow);
+        }
 
-  /* Matches Cards */
-  .match-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
 
-  .match-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 1.2rem 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 6px;
-  }
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
 
-  .match-team {
-    font-size: 1.2rem;
-    font-weight: 700;
-    width: 40%;
-    color: #fff;
-  }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
 
-  .match-team.away {
-    text-align: right;
-  }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            box-shadow: 0 0 10px var(--primary);
+        }
 
-  .match-vs {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
-    font-weight: 800;
-    background: rgba(0, 240, 255, 0.1);
-    padding: 0.4rem 1rem;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-  }
+        /* Roster Section */
+        .roster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
 
-  /* Buttons */
-  .btn-esports {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: #fff !important;
-    padding: 0.8rem 2rem;
-    border: none;
-    font-weight: 700;
-    font-family: 'Orbitron', sans-serif !important;
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-  }
+        .player-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
 
-  .btn-esports:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px var(--primary-glow);
-  }
+        .player-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+        }
 
-  @media (max-width: 768px) {
-    .match-card { flex-direction: column; gap: 0.8rem; text-align: center; }
-    .match-team, .match-team.away { width: 100%; text-align: center; }
-  }
-</style>
+        .player-img {
+            width: 100%;
+            height: 280px;
+            background: #151926;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .player-info {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .player-role {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .player-alias {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin: 0.2rem 0;
+        }
+
+        .player-name {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Schedule & Results */
+        .match-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .match-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 6px;
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 35%;
+        }
+
+        .team.away {
+            justify-content: flex-end;
+        }
+
+        .match-vs {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-weight: 800;
+            background: rgba(0, 240, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+        }
+
+        /* Sponsors */
+        .sponsors-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.7;
+        }
+
+        .sponsor-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .sponsor-logo:hover {
+            color: #fff;
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            background: #050608;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .match-card { flex-direction: column; gap: 1rem; text-align: center; }
+            .team { width: 100%; justify-content: center; }
+            .team.away { justify-content: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="brand">BLANK <span>//</span> ESPORTS</div>
+        <ul class="nav-links">
+            <li><a href="#roster">Roster</a></li>
+            <li><a href="#matches">Partidas</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+        </ul>
+        <a href="#join" class="btn-cta">UNIRSE AL DISCORD</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>DOMINANDO EL JUEGO</h1>
+        <p>Organización profesional de Esports. Competimos con pasión, estrategia y el objetivo firme de dominar cada torneo.</p>
+        <a href="#roster" class="btn-cta" style="font-size: 1.1rem; padding: 0.8rem 2rem;">CONOCE EL EQUIPO</a>
+    </section>
+
+    <!-- Roster Section -->
+    <section id="roster" class="container">
+        <h2 class="section-title">Alineación Oficial</h2>
+        <div class="roster-grid">
+            
+            <div class="player-card">
+                <div class="player-img">⚔️</div>
+                <div class="player-info">
+                    <span class="player-role">Mid Laner / Captain</span>
+                    <h3 class="player-alias">CYPHER</h3>
+                    <p class="player-name">Alex Rivera</p>
+                </div>
+            </div>
+
+            <div class="player-card">
+                <div class="player-img">🎯</div>
+                <div class="player-info">
+                    <span class="player-role">ADC</span>
+                    <h3 class="player-alias">VORTEX</h3>
+                    <p class="player-name">Mateo Gómez</p>
+                </div>
+            </div>
+
+            <div class="player-card">
+                <div class="player-img">🛡️</div>
+                <div class="player-info">
+                    <span class="player-role">Support</span>
+                    <h3 class="player-alias">AEGIS</h3>
+                    <p class="player-name">Lucas Silva</p>
+                </div>
+            </div>
+
+            <div class="player-card">
+                <div class="player-img">🌲</div>
+                <div class="player-info">
+                    <span class="player-role">Jungler</span>
+                    <h3 class="player-alias">SHADOW</h3>
+                    <p class="player-name">Daniel Rojas</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Upcoming Matches -->
+    <section id="matches" class="container">
+        <h2 class="section-title">Próximos Enfrentamientos</h2>
+        <div class="match-list">
+            
+            <div class="match-card">
+                <div class="team">
+                    <span>BLANK ESPORTS</span>
+                </div>
+                <div class="match-vs">VS</div>
+                <div class="team away">
+                    <span>NEXUS GAMING</span>
+                </div>
+            </div>
+
+            <div class="match-card">
+                <div class="team">
+                    <span>BLANK ESPORTS</span>
+                </div>
+                <div class="match-vs">VS</div>
+                <div class="team away">
+                    <span>VALKYRIE RISING</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="container">
+        <h2 class="section-title">Sponsors & Aliados</h2>
+        <div class="sponsors-flex">
+            <div class="sponsor-logo">HYPERX</div>
+            <div class="sponsor-logo">LOGITECH G</div>
+            <div class="sponsor-logo">RED BULL</div>
+            <div class="sponsor-logo">RAZER</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 BLANK Esports Organization. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
